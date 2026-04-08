@@ -1,0 +1,98 @@
+@baseUrl = http://localhost:3000
+
+### Empresa Rotas
+
+### Retorna todas as empresas
+GET {{baseUrl}}/empresa/
+
+### Retorna apenas uma empresa conforme o ID
+GET {{baseUrl}}/empresa/1
+
+
+### Create empresa
+POST {{baseUrl}}/empresa
+Content-Type: application/json
+
+{
+    "razao_social": "Gabriela e Samuel Esportes Ltda",
+    "cnpj": "26.080.664/0001-00",
+    "email": "adminGabriela@admin.com",
+    "senha": "Admin@123"
+}
+
+###Update Empresa
+PUT {{baseUrl}}/empresa/2
+Content-Type: application/json
+
+{
+    "senha": "Teste@123"
+}
+
+### Deletar Empresa
+DELETE {{baseUrl}}/empresa/2/
+
+### Departamento Rotas
+GET {{baseUrl}}/departamentos/
+
+### Departamento Rotas
+
+### Retorna todos os departamentos ativos da empresa (passar id)
+GET {{baseUrl}}/departamento/1
+
+### Retorna apenas um departamento conforme o ID e o id da empresa
+GET {{baseUrl}}/departamento/1/1
+
+### Create departamento
+POST {{baseUrl}}/departamento
+Content-Type: application/json
+
+{
+    "nome": "Industria",
+    "id_empresa": 2
+}
+
+###Update usuario
+PUT {{baseUrl}}/empresa/3
+Content-Type: application/json
+
+{
+    "razao_social": "Testando Update",
+    "cnpj": "63.978.725/0001-79"
+}
+
+### Deletar usuario
+DELETE {{baseUrl}}/empresa/7/
+
+
+
+
+### Usuario Rotas
+
+### Retorna todos os usuarios ativos
+GET {{baseUrl}}/usuario/
+
+### Retorna apenas um usuario conforme o ID
+GET {{baseUrl}}/empresa/7
+
+### Create usuario
+POST {{baseUrl}}/empresa
+Content-Type: application/json
+
+{
+    "razao_social": "Lara e Joana Construções ME",
+    "cnpj": "42.144.752/0001-76"
+}
+
+###Update usuario
+PUT {{baseUrl}}/empresa/3
+Content-Type: application/json
+
+{
+    "razao_social": "Testando Update",
+    "cnpj": "63.978.725/0001-79"
+}
+
+### Deletar usuario
+DELETE {{baseUrl}}/empresa/7/
+
+

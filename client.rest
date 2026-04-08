@@ -1,0 +1,192 @@
+@baseUrl = http://localhost:3000
+
+### Empresa Rotas
+
+### Retorna todas as empresas
+GET {{baseUrl}}/empresa/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzMzNjEzOTksImV4cCI6MTc3MzM2NDk5OX0.jnhn473lTyVoi39rFCBAVAj-PCwk9z9X7e3YNtMTydM
+### Retorna apenas uma empresa conforme o ID
+GET {{baseUrl}}/empresa/1
+
+
+### Create empresa
+POST {{baseUrl}}/empresa
+Content-Type: application/json
+
+{
+    "razao_social": "André e Sara Adega ME",
+    "cnpj": "41.613.545/0001-50",
+    "email": "andre@admin.com",
+    "senha": "Admin@123"
+}
+
+###Update Empresa
+PUT {{baseUrl}}/empresa/2
+Content-Type: application/json
+
+{
+    "senha": "Teste@123"
+}
+
+### Deletar Empresa
+DELETE {{baseUrl}}/empresa/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InplLm5pbmd1ZW1AZW1haWwuY29tIiwic3ViIjoyLCJyb2xlIjoidXNlciIsImlhdCI6MTc3MzcwMjAyMCwiZXhwIjoxNzczNzA1NjIwfQ.lumKW1x4TCjiVw41C_irzEEEnUqUjqBJpAeFsv5HTsY
+
+
+###################################################################################################################################################################################################################
+
+
+### Departamento Rotas
+GET {{baseUrl}}/departamentos/
+
+### Departamento Rotas
+
+### Retorna todos os departamentos ativos da empresa (passar id)
+GET {{baseUrl}}/departamento/1
+
+### Retorna apenas um departamento conforme o ID e o id da empresa
+###departamento/id_empresa/id do departamento
+GET {{baseUrl}}/departamento/3/1
+
+### Create departamento
+POST {{baseUrl}}/departamento
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzMzNjE2NzAsImV4cCI6MTc3MzM2NTI3MH0.-nkZFyXp8ytG8D54Oql5Z202WbOfZiFlfsADHlnCrhc
+Content-Type: application/json
+
+{
+    "nome": "Recursos Humanos",
+    "id_empresa": 1
+}
+
+###Update departamento
+###departamento/id_empresa/id do departamento
+PUT {{baseUrl}}/departamento/1/3
+Content-Type: application/json
+
+{
+    "nome": "Administrativo Teste"
+}
+
+### Deletar departamento
+###departamento/id_empresa/id do departamento
+DELETE {{baseUrl}}/departamento/1/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzMzNjE2NzAsImV4cCI6MTc3MzM2NTI3MH0.-nkZFyXp8ytG8D54Oql5Z202WbOfZiFlfsADHlnCrhc
+
+###################################################################################################################################################################################################################
+
+
+### Usuario Rotas
+
+### Retorna todos os usuarios ativos
+GET {{baseUrl}}/usuario/1
+
+### Retorna apenas um usuario conforme o ID e o id da empresa
+###usuario/id_empresa/id do usuario
+GET {{baseUrl}}/usuario/1/1
+
+### Create usuario
+POST {{baseUrl}}/usuario
+Content-Type: application/json
+
+{
+    "nome": "Ze ninguem",
+    "email": "ze.ninguem@email2.com",
+    "senha": "Teste@123",
+    "cpf": "173.050.620-81",
+    "id_empresa": 2
+}
+
+###Update usuario
+###usuario/id_empresa/id do usuarios
+PUT {{baseUrl}}/usuario/1/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzQzOTI5ODgsImV4cCI6MTc3NDM5NjU4OH0.4-wlxizI1QSBH5CiSs9f0_fS0tY_oOEUjapEAVOeD10
+Content-Type: application/json
+
+{
+    "senha": "Teste@123"
+}
+
+### Deletar usuario
+DELETE {{baseUrl}}/usuario/1/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzMzODExNTgsImV4cCI6MTc3MzM4NDc1OH0.RkW6QXuYxyYs7ypSA4rYetcTj4QE1dwuzIEJcwz5va0
+###Aceito ( quando a empresa aceita o usuario como funcionario dela) 
+POST {{baseUrl}}/usuario/aceito
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluR2FicmllbGFAYWRtaW4uY29tIiwic3ViIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzM3ODk5MjAsImV4cCI6MTc3Mzc5MzUyMH0.rfYm7rEcxde5B7uEXU-WsZvKkZhhy4sTs4jBY6yr5BA
+Content-Type: application/json
+
+{
+    "id_usuario": 2,
+    "id_empresa": 1,
+    "aceito": true
+}
+
+###################################################################################################################################################################################################################
+
+### Rota de Login (User)
+POST {{baseUrl}}/auth/login/usuario
+Content-Type: application/json
+
+{
+    "email": "ze.ninguem@email.com",
+    "senha": "Teste@123"
+}
+###Rota login Empresa (Admin)
+POST {{baseUrl}}/auth/login/empresa
+Content-Type: application/json
+
+{
+    "email": "adminGabriela@admin.com",
+    "senha": "Admin@123"
+}
+
+###Logout é só apagar o token
+
+
+
+###################################################################################################################################################################################################################
+
+
+###Rotas Tickets
+
+### Busca todos os tickets da empresa
+GET {{baseUrl}}/ticket/empresa/1
+
+### Busca com filtro (ex: aberto)
+GET {{baseUrl}}/ticket?id_empresa=1&status=aberto
+
+### Buscar 1 ticket
+GET {{baseUrl}}/ticket/one/1
+
+### Cria um ticket
+POST {{baseUrl}}/ticket
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InplLm5pbmd1ZW1AZW1haWwuY29tIiwic3ViIjoyLCJyb2xlIjoidXNlciIsImlhdCI6MTc3NDM5MzA4MCwiZXhwIjoxNzc0Mzk2NjgwfQ.gBAGMZyHlUZJgYrgJDMB9j590KWVq0z0Bph-C_eadLU
+
+{
+  "titulo": "Teste",
+  "descricao": "Não consigo logar",
+  "categoria": "bug",
+  "prioridade": "alta",
+  "id_empresa": 1,
+  "id_usuario": 1,
+  "id_departamento": 1
+}
+
+### Update Ticket
+PATCH {{baseUrl}}/ticket/3
+Content-Type: application/json
+
+{
+  "titulo": "Novo titulo"
+}
+
+### atualiza status do ticket
+PATCH {{baseUrl}}/ticket/3/status
+Content-Type: application/json
+
+{
+  "status": "fechado"
+}
+
+### Deletar ticket
+DELETE {{baseUrl}}/ticket/3
